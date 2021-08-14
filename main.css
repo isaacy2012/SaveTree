@@ -1,3 +1,11 @@
 h1 {
     color: blue;
 }
+
+.tree {
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+}
