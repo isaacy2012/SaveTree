@@ -5,21 +5,30 @@ body {
     grid-template-rows: repeat(8, 40px);
 }
 
-#logo {
-    grid-row: 2;
+body>div {
+    width: 375px;
 }
 
 #savings {
-    margin: 56px;
+    margin: 48px;
+    text-align: center;
+    background-color: aqua;
 }
 
 #savings #plus, #savings #minus {
-    border: none;
-    background: none;
-    font-size: 48px;
+    /*border: none;
+    background: none;*/
+    padding: 0;
+}
+
+#savings #plus img, #savings #minus img {
+    width: 48px;
+    height: 48px;
 }
 
 #savings p {
     font-size: 42px;
     display: inline-block;
+    margin-left: 36px;
+    margin-right: 36px;
 }
