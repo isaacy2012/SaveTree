@@ -1,6 +1,8 @@
 let money = 0;
 let goals = {};
 
+loadGoals();
+
 class Goal {
     name
     current
@@ -21,18 +23,37 @@ class Goal {
     }
 }
 
-
-function refresh() {
-    let textArea = document.getElementById("textArea");
-    textArea.innerText = getGoalString();
+function mutateData(update) {
+    update();
+    saveGoals();
+    refresh();
 }
 
-function getGoalString() {
-    let output = "";
+
+function refresh() {
+    let UI_goalsList = document.getElementById("UI_goalsList");
+    UI_goalsList.innerHTML = "";
+    let textArea = document.getElementById("textArea");
     for (name in goals) {
-        output += goals[name].toString() + "\n";
+        UI_goalsList.appendChild(getGoalElement(name));
     }
-    return output;
+}
+
+
+function getGoalElement(name) {
+    let element = document.createElement("div");
+    element.innerText = goals[name].toString();
+    let button = document.createElement("button");
+    button.innerText = "+";
+    button.onclick = () => {
+        incrementFromName(name)
+
+        //refresh the page
+        refresh();
+    }
+    element.append(button);
+
+    return element;
 }
 
 function buttonOnClick() {
@@ -48,29 +69,30 @@ function buttonOnClick() {
         return;
     }
 
-    let goal = new Goal(name, number);
-    goals[name] = goal;
+    mutateData(() => goals[name] = new Goal(name, number));
 
     // clear the text inputs
     nameInput.value = "";
     totalInput.value = "";
 
-    //refresh the page
-    refresh();
 }
 
-function incrementCurrent() {
-    let editNameInput = document.getElementById("editNameInput");
-
-    let name = editNameInput.value;
-
+function incrementFromName(name) {
     if (!goals[name]) {
         return;
     }
 
-    goals[name].increment();
-
-    //refresh the page
-    refresh();
+    mutateData(() => goals[name].increment());
 }
 
+function saveGoals() {
+    localStorage["goals"] = JSON.stringify(goals);
+}
+
+function loadGoals() {
+    let ls = localStorage["goals"];
+    if (!ls) {
+        return;
+    }
+    goals = JSON.parse(ls)
+}
