@@ -1,8 +1,6 @@
 let money = 0;
 let goals = {};
 
-loadGoals();
-
 class Goal {
     name
     current
@@ -18,10 +16,20 @@ class Goal {
         this.current++;
     }
 
+    static ofObject(goalObj) {
+        let goal = new Goal(goalObj.name, goalObj.total);
+        goal.current = goalObj.current;
+        return goal;
+    }
+
     toString() {
         return `${this.name}, ${this.current}, ${this.total}`
     }
 }
+
+loadGoals();
+refresh();
+
 
 function mutateData(update) {
     update();
@@ -94,5 +102,11 @@ function loadGoals() {
     if (!ls) {
         return;
     }
-    goals = JSON.parse(ls)
+    let goalObjects = JSON.parse(ls)
+    for (goalName in goalObjects) {
+        goalObj = goalObjects[goalName];
+        let goal = Goal.ofObject(goalObj);
+        goals[goalObj.name] = goal;
+    }
 }
+
