@@ -1,5 +1,5 @@
 let money = 0;
-let goals = [];
+let goals = {};
 
 class Goal {
     name
@@ -12,16 +12,25 @@ class Goal {
         this.current = 0;
     }
 
+    increment() {
+        this.current++;
+    }
+
     toString() {
         return `${this.name}, ${this.current}, ${this.total}`
     }
 }
 
 
+function refresh() {
+    let textArea = document.getElementById("textArea");
+    textArea.innerText = getGoalString();
+}
+
 function getGoalString() {
     let output = "";
-    for (goal of goals) {
-        output += goal.toString() + "\n";
+    for (name in goals) {
+        output += goals[name].toString() + "\n";
     }
     return output;
 }
@@ -29,7 +38,6 @@ function getGoalString() {
 function buttonOnClick() {
     let nameInput = document.getElementById("nameInput");
     let totalInput = document.getElementById("totalInput");
-    let textArea = document.getElementById("textArea");
 
     let name = nameInput.value;
     let total = totalInput.value;
@@ -41,10 +49,28 @@ function buttonOnClick() {
     }
 
     let goal = new Goal(name, number);
-    goals.push(goal);
-    textArea.innerText = getGoalString();
+    goals[name] = goal;
 
     // clear the text inputs
     nameInput.value = "";
     totalInput.value = "";
+
+    //refresh the page
+    refresh();
 }
+
+function incrementCurrent() {
+    let editNameInput = document.getElementById("editNameInput");
+
+    let name = editNameInput.value;
+
+    if (!goals[name]) {
+        return;
+    }
+
+    goals[name].increment();
+
+    //refresh the page
+    refresh();
+}
+

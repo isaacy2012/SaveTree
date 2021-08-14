@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -44,7 +44,7 @@
       <updated>1628904461313</updated>
       <workItem from="1628904463401" duration="22000" />
       <workItem from="1628904503044" duration="385000" />
-      <workItem from="1628904909690" duration="3476000" />
+      <workItem from="1628904909690" duration="5058000" />
     </task>
     <servers />
   </component>
