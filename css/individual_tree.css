@@ -1,13 +1,25 @@
-.main {
-    width: 375px;
-    height: 812px;
+body {
+    display: grid;
+    grid-row-gap: 32px;
+    grid-column-gap: 32px;
+    grid-template-rows: repeat(8, 40px);
 }
 
-.savings .plus, .savings .minus {
-
+#logo {
+    grid-row: 2;
 }
 
-.savings p {
-    width: 10rem;
+#savings {
+    margin: 56px;
+}
+
+#savings #plus, #savings #minus {
+    border: none;
+    background: none;
+    font-size: 48px;
+}
+
+#savings p {
+    font-size: 42px;
     display: inline-block;
 }
