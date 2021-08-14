@@ -1,87 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
+
 <body>
-<form>
+
     <h1>Welcome, Jamie</h1>
     <div class="container">
-        <div
-                id="UI_goalsList"
-                class="row row-cols-2"
-        >
+        <div id="UI_goalsList" class="row row-cols-2">
         </div>
     </div>
-    <h2>Add</h2>
-    <div class="form-group">
-        <div>
-            <label
-                    for = "nameInput"
-            >
-                Name
-            </label>
-            <input
-                    class="form-control"
-                    id="nameInput"
-            />
-        </div>
-        <div>
-            <label>
-                Total
-                for = "totalInput"
-            </label>
-            <input
-                    class="form-control"
-                    id="totalInput"
-                    type="number"
-            />
-            <div>
-                <button class="btn btn-success" onclick="addGoal()">Add Goal</button>
+    <button type="button" class="btn btn-primary" data-bsg-toggle="modal" data-bs-target="#addGoal">Add Goal</button>
+
+    <div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addGoalLabel">Add Goal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class=modal-body">
+                    <form>
+                        <h2>Add</h2>
+                        <div class=" form-group">
+                            <div>
+                                <label for="nameInput">
+                                    Name
+                                </label>
+                                <input class="form-control" id="nameInput" />
+                            </div>
+                            <div>
+                                <label>
+                                    Total
+                                    for = "totalInput"
+                                </label>
+                                <input class="form-control" id="totalInput" type="number" />
+                                <div>
+                                    <button class="btn btn-success" onclick="addGoal()">Add Goal</button>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Edit</h2>
+                        <div class="form-group">
+                            <div>
+                                <label for="editNameInput">
+                                    Goal To Edit
+                                </label>
+                                <input class="form-control" id="editNameInput" />
+                            </div>
+                            <div>
+                                <label for="incrementAmount">
+                                    Amount to add
+                                </label>
+                                <input class="form-control" id="incrementAmount" type="number" />
+                            </div>
+                            <div>
+                                <button class="btn btn-success" onclick="incrementCurrent()">Increment Amount</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <h2>Edit</h2>
-    <div class="form-group">
-        <div>
-            <label
-                    for = "editNameInput"
-            >
-                Goal To Edit
-            </label>
-            <input
-                    class="form-control"
-                    id="editNameInput"
-            />
-        </div>
-        <div>
-            <label
-                    for = "incrementAmount"
-            >
-                Amount to add
-            </label>
-            <input
-                    class="form-control"
-                    id="incrementAmount"
-                    type="number"
-            />
-        </div>
-        <div>
-            <button class="btn btn-success" onclick="incrementCurrent()">Increment Amount</button>
-        </div>
-    </div>
-</form>
 
-<script src="shared.js"></script>
-<script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    </form>
+
+    <script src="shared.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
