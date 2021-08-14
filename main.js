@@ -16,6 +16,10 @@ class Goal {
         this.current++;
     }
 
+    incrementByAmount(incrementAmount) {
+        this.current = this.current + incrementAmount;
+    }
+
     static ofObject(goalObj) {
         let goal = new Goal(goalObj.name, goalObj.total);
         goal.current = goalObj.current;
@@ -91,6 +95,31 @@ function incrementFromName(name) {
     }
 
     mutateData(() => goals[name].increment());
+}
+
+function incrementCurrent() {
+    let editNameInput = document.getElementById("editNameInput");
+    let incrementAmountInput = document.getElementById("incrementAmount");
+
+    let name = editNameInput.value;
+    let amountToAdd = parseFloat(incrementAmountInput.value);
+
+    if (!goals[name]) {
+        window.alert("Error, that goal name does not exist. Please try again.")
+        return;
+    }
+
+    if (isNaN(amountToAdd)) {
+        window.alert("Error, not a number. Please try again.")
+        return;
+    }
+
+    mutateData(() => goals[name].incrementByAmount(amountToAdd));
+
+    // clear the text inputs
+    editNameInput.value = "";
+    incrementAmountInput.value = "";
+
 }
 
 function saveGoals() {
