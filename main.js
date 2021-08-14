@@ -6,13 +6,18 @@ function refresh() {
     UI_goalsList.innerHTML = "";
     let textArea = document.getElementById("textArea");
     for (name in goals) {
-        UI_goalsList.appendChild(getGoalElement(name));
+        UI_goalsList.appendChild(makeGoalElement(name));
     }
 }
 
-function getGoalElement(name) {
+function makeGoalElement(name) {
+    let superElement = document.createElement("div");
+    superElement.className = "col";
     let element = document.createElement("div");
+    superElement.appendChild(element);
+    element.className = "card";
     let linkElement = document.createElement("a");
+    linkElement.className = "goalLink";
     linkElement.setAttribute("href", "./goalDetailPage.html?name=" + name);
     linkElement.innerText = goals[name].toString();
     element.appendChild(linkElement);
@@ -27,7 +32,7 @@ function getGoalElement(name) {
     }
     element.append(button);
 
-    return element;
+    return superElement;
 }
 
 function addGoal() {

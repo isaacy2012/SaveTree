@@ -16,3 +16,15 @@ form {
     padding: 0.5em;
 }
 
+.goalLink {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    margin-left: -4px;
+    margin-right: -4px;
+}
