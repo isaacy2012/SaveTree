@@ -1,0 +1,13 @@
+.main {
+    width: 375px;
+    height: 812px;
+}
+
+.savings .plus, .savings .minus {
+
+}
+
+.savings p {
+    width: 10rem;
+    display: inline-block;
+}
