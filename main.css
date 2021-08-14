@@ -1,3 +1,16 @@
 h1 {
     color: blue;
 }
+
+/*Form styling for adding new goals and for registration*/
+form {
+    width: 100%;
+    padding: 0.5em;
+    display: grid;
+    
+}
+
+.form-group {
+    padding: 0.5em;
+    
+}
