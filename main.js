@@ -34,14 +34,6 @@ class Goal {
 loadGoals();
 refresh();
 
-
-function mutateData(update) {
-    update();
-    saveGoals();
-    refresh();
-}
-
-
 function refresh() {
     let UI_goalsList = document.getElementById("UI_goalsList");
     UI_goalsList.innerHTML = "";
@@ -51,11 +43,11 @@ function refresh() {
     }
 }
 
-
 function getGoalElement(name) {
     let element = document.createElement("div");
     element.innerText = goals[name].toString();
     let button = document.createElement("button");
+    button.className = "btn btn-primary"
     button.innerText = "+";
     button.onclick = () => {
         incrementFromName(name)
@@ -68,14 +60,25 @@ function getGoalElement(name) {
     return element;
 }
 
-function buttonOnClick() {
+function mutateData(update) {
+    update();
+    saveGoals();
+    refresh();
+}
+
+function addGoal() {
     let nameInput = document.getElementById("nameInput");
     let totalInput = document.getElementById("totalInput");
 
     let name = nameInput.value;
     let total = totalInput.value;
-
     let number = parseFloat(total)
+
+    // If the name is empty
+    if (name.trim().length === 0) {
+        return;
+    }
+
     if (isNaN(number)) {
         window.alert("Error, not a number. Please try again.")
         return;
@@ -104,11 +107,18 @@ function incrementCurrent() {
     let name = editNameInput.value;
     let amountToAdd = parseFloat(incrementAmountInput.value);
 
+    // If the name is empty
+    if (name.trim().length === 0) {
+        return;
+    }
+
+    // If there is no goal with this name
     if (!goals[name]) {
         window.alert("Error, that goal name does not exist. Please try again.")
         return;
     }
 
+    // If not a number
     if (isNaN(amountToAdd)) {
         window.alert("Error, not a number. Please try again.")
         return;

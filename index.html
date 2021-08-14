@@ -5,54 +5,81 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
+<form>
     <h1>Web design is my passion</h1>
     <div
-            id = "UI_goalsList"
+            id="UI_goalsList"
     >
         <div>
         </div>
     </div>
     <h2>Add</h2>
-    <div>
-        <label>
-            Name
+    <div class="form-group">
+        <div>
+            <label
+                    for = "nameInput"
+            >
+                Name
+            </label>
             <input
-                    id = "nameInput"
+                    class="form-control"
+                    id="nameInput"
             />
-        </label>
-    </div>
-    <div>
-        <label>
-            Total
+        </div>
+        <div>
+            <label>
+                Total
+                for = "totalInput"
+            </label>
             <input
-                id = "totalInput"
-                type = "number"
+                    class="form-control"
+                    id="totalInput"
+                    type="number"
             />
-        </label>
+            <div>
+                <button class="btn btn-success" onclick="addGoal()">Add Goal</button>
+            </div>
+        </div>
     </div>
-    <button onclick="buttonOnClick()">Click me</button>
     <h2>Edit</h2>
-    <div>
-        <label>
-            Goal To Edit
+    <div class="form-group">
+        <div>
+            <label
+                    for = "editNameInput"
+            >
+                Goal To Edit
+            </label>
             <input
-                id = "editNameInput"
+                    class="form-control"
+                    id="editNameInput"
             />
-        </label>
-    </div>
-    <div>
-        <label>
-            Amount to add
+        </div>
+        <div>
+            <label
+                    for = "incrementAmount"
+            >
+                Amount to add
+            </label>
             <input
-                    id = "incrementAmount"
-                    type = "number"
+                    class="form-control"
+                    id="incrementAmount"
+                    type="number"
             />
-        </label>
+        </div>
+        <div>
+            <button class="btn btn-success" onclick="incrementCurrent()">Increment Amount</button>
+        </div>
     </div>
-    <button onclick="incrementCurrent()">Increment Amount</button>
-    <script src="main.js"></script>
+</form>
+
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,3 +1,18 @@
-h1 {
-    color: blue;
+form {
+    width: 100%;
+    padding: 0.5em;
+    display: grid;
+    text-align: center;
+
 }
+
+.btn{
+    width: 100%;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.form-group {
+    padding: 0.5em;
+}
+
