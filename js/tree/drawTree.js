@@ -4,15 +4,12 @@ canvas.width = 375;
 canvas.height = 500;
 let x = 200;
 let y = 400;
-let width = canvas.width;
-let height = canvas.height;
-let leafDistance = 90;
 let circles = [];
 
 class Circle {
     x;
     y;
-    radius;
+    circleRadius;
     tick = 0;
     rgba;
     period;
@@ -23,7 +20,7 @@ class Circle {
     constructor(x, y, radius, rgba, canAnimate=true) {
         this.x = x;
         this.y = y;
-        this.radius = radius;
+        this.circleRadius = radius;
         this.rgba = rgba;
 
         if(canAnimate){
@@ -42,14 +39,14 @@ class Circle {
 
     getXDraw() {
         if (this.clockwise) {
-            return this.x + this.xAnim * this.radius * 0.3 * Math.cos(this.tick / this.period * 2 * Math.PI);
+            return this.x + this.xAnim * this.circleRadius * 0.3 * Math.cos(this.tick / this.period * 2 * Math.PI);
         } else {
-            return this.x + this.xAnim * this.radius * -0.3 * Math.cos(this.tick / this.period * 2 * Math.PI);
+            return this.x + this.xAnim * this.circleRadius * -0.3 * Math.cos(this.tick / this.period * 2 * Math.PI);
         }
     }
 
     getYDraw() {
-        return this.y + this.yAnim * this.radius * 0.3 * Math.sin(this.tick / this.period * 2 * Math.PI);
+        return this.y + this.yAnim * this.circleRadius * 0.3 * Math.sin(this.tick / this.period * 2 * Math.PI);
     }
 
     incr() {
@@ -86,57 +83,18 @@ function fuzz(x, diff) {
     return x + random(-diff, diff);
 }
 
-function treefunc(x) {
-    if (x < 0 || x > 1) {
-        console.log("Illegal call to treefunc, x: " + x);
-        return NaN;
-    }
-    if (x < 0.5) {
-        return 4 * (Math.pow(x, 2));
-    } else {
-        return 4 * (Math.pow((x - 1), 2));
-    }
-}
-
-function getFuzz(row, rowMax) {
-    let maxFuzz = 10;
-    return row / rowMax * maxFuzz;
-}
-
-function normDist(x) {
-    let y = 2 * x;
-    let a = 0.6;
-    let b = 1;
-    let left = 1.0 / (a * Math.sqrt(2 * Math.PI));
-    let exponent = -0.5 * Math.pow(((y - b) / a), 2);
-    let epower = Math.exp(exponent);
-    return 2 * left * epower;
-}
-
-function getVerticalLeafSize(row, rowMax) {
-    let leafSize = 60;
-    let kRow = row / rowMax;
-    return (kRow / 2.0 + 0.5) * leafSize;
-}
-
-function getHorizontalLeafSize(col, colMax) {
-    return normDist(col / colMax);
-}
-
-function getLeafSize(row, rowMax, col, colMax) {
-    return (getVerticalLeafSize(row, rowMax) + getHorizontalLeafSize(col, colMax)) / 2.0;
-}
-
 function makeTree() {
     let colorFuzz = 15;
     let baseLeafSize = 50;
     let offset = random(0, Math.PI);
-    let centerRadius = height / 5.0;
+    let centerRadius = canvas.height / 5.0;
     let iter = random(6, 8);
-    circles.push(new Circle(width/2, height/2, centerRadius, rgba(fuzz(30, colorFuzz), fuzz(179, colorFuzz), fuzz(80, colorFuzz), 1), false));
+    let leafDistance = 90;
+    
+    circles.push(new Circle(canvas.width/2, canvas.height/2, centerRadius, rgba(fuzz(30, colorFuzz), fuzz(179, colorFuzz), fuzz(80, colorFuzz), 1), false));
     for (let i = 0; i < iter; i++) {
-        let xc = width/2 + leafDistance * Math.cos(offset + i / iter * 2 * Math.PI);
-        let yc = height/2 + leafDistance * Math.sin(offset + i / iter * 2 * Math.PI);
+        let xc = canvas.width/2 + leafDistance * Math.cos(offset + i / iter * 2 * Math.PI);
+        let yc = canvas.height/2 + leafDistance * Math.sin(offset + i / iter * 2 * Math.PI);
         circles.push(new Circle(fuzz(xc, 10), fuzz(yc, 10), fuzz(baseLeafSize, 20), rgba(fuzz(30, colorFuzz), fuzz(179, colorFuzz * 1.5), fuzz(80, colorFuzz), fuzz(0.9, 0.1))));
     }
 }
@@ -144,9 +102,9 @@ function makeTree() {
 
 function draw() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    fillRect(width * 7.0 / 16.0, height / 2.0, width / 8.0, height / 2.0, rgba(87, 56, 33, 0.9));
+    fillRect(canvas.width * 7.0 / 16.0, canvas.height / 2.0, canvas.width / 8.0, canvas.height / 2.0, rgba(87, 56, 33, 0.9));
     for (let circle of circles) {
-        fillCircle(circle.getXDraw(), circle.getYDraw(), circle.radius, circle.rgba);
+        fillCircle(circle.getXDraw(), circle.getYDraw(), circle.circleRadius, circle.rgba);
         circle.incr();
     }
 }
