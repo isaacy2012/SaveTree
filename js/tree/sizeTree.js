@@ -24,6 +24,9 @@ function sizeTree(percent) {
     context.scale(p, p);
 }
 
+/**
+ * Reset the tree to the original context and size
+ */
 function resetTree(){
     context.scale(1/p, 1/p);
     context.translate(-tx, -ty);

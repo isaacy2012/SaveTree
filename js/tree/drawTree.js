@@ -81,6 +81,9 @@ function fuzz(x, diff) {
     return x + random(-diff, diff);
 }
 
+/**
+ * Generates a tree
+ */
 function makeTree() {
     let colorFuzz = 15;
     let offset = random(0, Math.PI);
@@ -98,7 +101,9 @@ function makeTree() {
     }
 }
 
-
+/**
+ * Draws a tree 16 times a second
+ */
 function draw() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     fillRect(canvas.width * 7.0 / 16.0, canvas.height / 2.0, canvas.width / 8.0, canvas.height / 2.0, rgba(87, 56, 33, 0.9));
