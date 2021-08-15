@@ -100,4 +100,3 @@ function incrementCurrent() {
     incrementAmountInput.value = "";
 
 }
-

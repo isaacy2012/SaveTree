@@ -53,4 +53,3 @@ function loadGoals() {
         goals[goalObj.name] = goal;
     }
 }
-
