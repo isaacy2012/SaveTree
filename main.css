@@ -1,30 +1,136 @@
-.logo {
-    /*Estimated per the 40px by 40px logo on 375px wide mockup*/
-    width: 10%;
+body {
+    text-align: center;
+    background-color: #ffffff;
+    color: #4C9430;
+    margin: 1em;
 }
-
-h2 {
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
+h1,h2,h3,h4,h5,h6 {
+    font-weight: medium;
 }
-
-.grid {
-    align-items: center;
-    max-width: 100%;
-}
-
-img {
-    max-width: 100%;
-}
-/*Form styling for adding new goals and for registration*/
 form {
     width: 100%;
     padding: 0.5em;
     display: grid;
-    
+    text-align: center;
+
+}
+.goals{
+    width: 100%;
+}
+label{
+    color: #4C9430;
+
+}
+.form-control{
+    background-color:#E9FFE0;
+}
+
+.btn {
+    width: 100%;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.btn-circle-div {
+    float: right;
+    text-align: right;
+    margin-top: 10px;
+}
+.btn-circle {
+    /*background-color: #85AA34;*/
+    font-size: 16px;
+    color: white;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .form-group {
-    padding: 0.5em;
-    
+    padding: 0.25em;
 }
+
+.goalLink {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    margin-left: -4px;
+    margin-right: -4px;
+    border-radius: 8px;
+}
+.modal-content{
+    border-radius: 8px;
+}
+
+
+.btn-form{
+    margin-bottom: 0px;
+}
+.btn {
+    border-radius: 8px;
+}
+
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.form-control{
+    border-radius: 8px;
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background-color: #A8CF41;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.fab:hover {
+    background-color: #85AA34;
+}
+
+.number {
+    color: 	#696969;
+    background-color: #e1ec93;
+    padding: .2em;
+}
+
+/*&*/
+/*::before {*/
+/*    content: " ";*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*    height: 35px;*/
+/*    width: 35px;*/
+/*    background-color: inherit;*/
+/*    border-radius: 0 0 10px 0;*/
+/*    z-index: -1;*/
+/*}*/
+
+/*.fab-content {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+
