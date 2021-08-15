@@ -28,6 +28,18 @@ label{
     background-color:#E9FFE0;
 }
 
+#treeContainer {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#treeCanvas {
+    position: relative;
+    align-items: center;
+}
+
 .btn {
     width: 100%;
     margin-bottom: 0.5em;
