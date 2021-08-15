@@ -1,4 +1,5 @@
 body {
+    text-align: center;
     background-color: #F4FDB8;
 }
 
@@ -14,6 +15,21 @@ form {
     width: 100%;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
+}
+
+.btn-circle-div {
+    float: right;
+    text-align: right;
+    margin-top: 10px;
+}
+.btn-circle {
+    /*background-color: #85AA34;*/
+    font-size: 16px;
+    color: white;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .form-group {

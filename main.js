@@ -21,16 +21,18 @@ function makeGoalElement(name) {
     linkElement.setAttribute("href", "./goalDetailPage.html?name=" + name);
     linkElement.innerText = goals[name].toString();
     element.appendChild(linkElement);
+    let buttonDiv = document.createElement("div");
+    buttonDiv.className = "btn-circle-div";
     let button = document.createElement("button");
-    button.className = "btn btn-secondary"
+    button.className = "w3-circle"
     button.innerText = "+";
     button.onclick = () => {
         incrementFromName(name)
-
         //refresh the page
         refresh();
     }
-    element.append(button);
+    buttonDiv.append(button);
+    element.append(buttonDiv)
 
     return superElement;
 }
@@ -69,34 +71,3 @@ function incrementFromName(name) {
     mutateData(() => goals[name].increment(), refresh);
 }
 
-function incrementCurrent() {
-    let editNameInput = document.getElementById("editNameInput");
-    let incrementAmountInput = document.getElementById("incrementAmount");
-
-    let name = editNameInput.value;
-    let amountToAdd = parseFloat(incrementAmountInput.value);
-
-    // If the name is empty
-    if (name.trim().length === 0) {
-        return;
-    }
-
-    // If there is no goal with this name
-    if (!goals[name]) {
-        window.alert("Error, that goal name does not exist. Please try again.")
-        return;
-    }
-
-    // If not a number
-    if (isNaN(amountToAdd)) {
-        window.alert("Error, not a number. Please try again.")
-        return;
-    }
-
-    mutateData(() => goals[name].incrementByAmount(amountToAdd), refresh);
-
-    // clear the text inputs
-    editNameInput.value = "";
-    incrementAmountInput.value = "";
-
-}
