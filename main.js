@@ -22,7 +22,7 @@ function makeGoalElement(name) {
     linkElement.innerText = goals[name].toString();
     element.appendChild(linkElement);
     let button = document.createElement("button");
-    button.className = "btn btn-primary"
+    button.className = "btn btn-secondary"
     button.innerText = "+";
     button.onclick = () => {
         incrementFromName(name)
