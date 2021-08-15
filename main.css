@@ -26,7 +26,8 @@ form {
 }
 .detail-item{
     padding: 0.2em 0em;
-    text-align:left;
+    text-align:center;
+
 }
 .goals{
     width: 100%;
@@ -45,11 +46,12 @@ form {
     font-size: 2.5em;
     font-weight: 300;
 }
+
 .detail-text{
     text-align: left;
 }
 h3,h4,h5,h6{
-    weight: 400;
+    font-weight: 400;
 }
 .form-control{
     background-color:#E9FFE0;
@@ -60,11 +62,13 @@ h3,h4,h5,h6{
     height: 500px;
     position: relative;
     margin-bottom: 50px;
+
 }
 
 #treeCanvas {
     position: relative;
     align-items: center;
+    margin:auto;
 }
 
 .btn {
