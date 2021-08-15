@@ -1,3 +1,7 @@
+body {
+    background-color: #F4FDB8;
+}
+
 form {
     width: 100%;
     padding: 0.5em;
@@ -6,7 +10,7 @@ form {
 
 }
 
-.btn{
+.btn {
     width: 100%;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
@@ -27,4 +31,64 @@ form {
     padding: 8px;
     margin-left: -4px;
     margin-right: -4px;
+    border-radius: 8px;
 }
+
+.btn {
+    border-radius: 8px;
+}
+
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.form-control{
+    border-radius: 8px;
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background-color: #A8CF41;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.fab:hover {
+    background-color: #85AA34;
+}
+
+
+/*&*/
+/*::before {*/
+/*    content: " ";*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*    height: 35px;*/
+/*    width: 35px;*/
+/*    background-color: inherit;*/
+/*    border-radius: 0 0 10px 0;*/
+/*    z-index: -1;*/
+/*}*/
+
+/*.fab-content {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+

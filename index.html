@@ -15,11 +15,12 @@
 
     <h1>Welcome, Jamie</h1>
     <div class="container">
-        <div id="UI_goalsList" class="row row-cols-2">
+        <div
+                id="UI_goalsList"
+                class="row row-cols-3"
+        >
         </div>
     </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addGoal">Add Goal</button>
-
     <div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -55,7 +56,45 @@
         </div>
         <!--modal-dialogue closing tag-->
     </div>
-
+    <h2>Edit</h2>
+    <div class="form-group">
+        <div>
+            <label
+                    for = "editNameInput"
+            >
+                Goal To Edit
+            </label>
+            <input
+                    class="form-control"
+                    id="editNameInput"
+            />
+        </div>
+        <div>
+            <label
+                    for = "incrementAmount"
+            >
+                Amount to add
+            </label>
+            <input
+                    class="form-control"
+                    id="incrementAmount"
+                    type="number"
+            />
+        </div>
+        <div>
+            <button class="btn btn-success" onclick="incrementCurrent()">Increment Amount</button>
+        </div>
+    </div>
+</form>
+<a class="fab-container" href="goalDetailPage.html?name=FAB">
+    <div class="fab shadow">
+        <div class="fab-content">
+            <svg viewBox="-0.5 -0.5 62 62" width="150" height="150">
+                 <path d = "M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill = "white"/>
+            </svg>
+        </div>
+    </div>
+</a>
     </form>
 
     <script src="shared.js"></script>
