@@ -18,32 +18,40 @@
 <body>
         <form>
 
-                <a href="./index.html"><img src="https://img.icons8.com/metro/26/000000/back.png"></a>
+                <a href="./index.html"><img src="https://img.icons8.com/metro/26/000000/back.png"> </a>
                 <h1 id="titleText">[TitleText]</h1>
                 <div id="treeContainer">
                         <canvas id="treeCanvas"></canvas>
                 </div>
-                <h2>Current:</h2>
-                <h3 id="UI_currentText" class="number">[Current]</h3>
-                <h2>Goal Amount:</h2>
-                <h3 id="UI_goalAmountText" class="number">[Goal Amount]</h3>
-                <h2>Edit</h2>
 
-                <div class="form-group">
-                        <div class="detail-item">
-                                <label class="detail-text" for="incrementAmount">
-                                        Amount to add
-                                </label>
-                                <input class="form-control" id="incrementAmount" type="number" />
-                        </div>
-                        <div class="detail-item">
-                                <button type="button" class="btn btn-success" onclick="detailAdd()">Increment
-                                        Amount</button>
-                                <button type="button" class="btn btn-failure" onclick="detailAdd()">Delete</button>
+                <div class="detail-item">
+                        <h2>Current:</h2>
+                        <h3 id="UI_currentText" class="number">[Current]</h3>
+                </div>
+                <div class="detail-item">
+                        <h2>Goal Amount:</h2>
+                        <h3 id="UI_goalAmountText" class="number">[Goal Amount]</h3>
+                </div>
+                <div class="detail-item">
+                        <h2>Edit</h2>
+                        <div class="form-group">
+                                <div class="detail-item">
+                                        <label class="detail-text" for="incrementAmount">
+                                                Amount to add
+                                        </label>
+                                        <input class="form-control" id="incrementAmount" type="number" />
+                                </div>
+                                <div class="detail-item">
+                                        <button type="button" class="btn btn-success" onclick="detailAdd()">Increment
+                                                Amount</button>
+                                        <button type="button" class="btn btn-failure"
+                                                onclick="detailAdd()">Delete</button>
+                                </div>
                         </div>
                 </div>
+
         </form>
-        </div>
+
 
         <script src="shared.js"></script>
         <script src="drawTree.js"></script>
