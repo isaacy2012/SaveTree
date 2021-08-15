@@ -1,14 +1,28 @@
 body {
     text-align: center;
-    background-color: #F4FDB8;
+    background-color: #ffffff;
+    color: #4C9430;
+    margin: 1em;
 }
-
+h1,h2,h3,h4,h5,h6 {
+    font-weight: medium;
+}
 form {
     width: 100%;
     padding: 0.5em;
     display: grid;
     text-align: center;
 
+}
+.goals{
+    width: 100%;
+}
+label{
+    color: #4C9430;
+
+}
+.form-control{
+    background-color:#E9FFE0;
 }
 
 .btn {
@@ -33,7 +47,7 @@ form {
 }
 
 .form-group {
-    padding: 0.5em;
+    padding: 0.25em;
 }
 
 .goalLink {
@@ -49,7 +63,14 @@ form {
     margin-right: -4px;
     border-radius: 8px;
 }
+.modal-content{
+    border-radius: 8px;
+}
 
+
+.btn-form{
+    margin-bottom: 0px;
+}
 .btn {
     border-radius: 8px;
 }
@@ -84,6 +105,11 @@ form {
     background-color: #85AA34;
 }
 
+.number {
+    color: 	#696969;
+    background-color: #e1ec93;
+    padding: .2em;
+}
 
 /*&*/
 /*::before {*/

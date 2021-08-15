@@ -7,71 +7,67 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 
 <body>
 
-<h1>Welcome, Jamie</h1>
-<div class="container">
-    <div
-            id="UI_goalsList"
-            class="row row-cols-3"
-    >
-    </div>
-</div>
-<div class="fab-container" data-bs-toggle="modal" data-bs-target="#addGoal">
-    <div class="fab shadow">
-        <div class="fab-content">
-            <svg viewBox="-0.5 -0.5 62 62" width="150" height="150">
-                <path d = "M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill = "white"/>
-            </svg>
+    <h1>Welcome, Jamie</h1>
+    <div class="container goals">
+        <div id="UI_goalsList" class="row row-cols-3">
         </div>
     </div>
-</div>
-<div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addGoalLabel">Add Goal</h5>
-
+    <div class="fab-container" data-bs-toggle="modal" data-bs-target="#addGoal">
+        <div class="fab shadow">
+            <div class="fab-content">
+                <svg viewBox="-0.5 -0.5 62 62" width="150" height="150">
+                    <path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="white" />
+                </svg>
             </div>
-            <div class=modal-body">
-                <form>
-                    <h2>Add</h2>
-                    <div class=" form-group">
-                        <div>
-                            <label for="nameInput">
-                                Name
-                            </label>
-                            <input class="form-control" id="nameInput"/>
-                        </div>
-                        <div>
-                            <label>
-                                Total
-                            </label>
-                            <input class="form-control" id="totalInput" type="number"/>
+        </div>
+    </div>
+    <div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
+        <div class="modal-dialog .modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100" id="addGoalLabel">Add Goal</h5>
+
+                </div>
+                <div class=modal-body">
+                    <form>
+                        <div class=" form-group">
                             <div>
-                                <button class="btn btn-success" onclick="addGoal()">Add Goal</button>
+                                <label for="nameInput">
+                                    What are you saving for?
+                                </label>
+                                <input class="form-control" id="nameInput" />
+                            </div>
+                            <div>
+                                <label>
+                                    Amount
+                                </label>
+                                <input class="form-control" id="totalInput" type="number" />
+                                <div>
+                                    <button class="btn btn-success btn-form" onclick="addGoal()">Let's Grow!</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <!--modal-body closing tag-->
             </div>
-            <!--modal-body closing tag-->
+            <!--modal-content closing tag-->
         </div>
-        <!--modal-content closing tag-->
+        <!--modal-dialogue closing tag-->
     </div>
-    <!--modal-dialogue closing tag-->
-</div>
-</form>
-</form>
+    </form>
+    </form>
 
-<script src="shared.js"></script>
-<script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    <script src="shared.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 </body>

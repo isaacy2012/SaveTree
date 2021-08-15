@@ -16,16 +16,12 @@
         <form>
                 <a class="btn btn-success" href="./index.html">Back</a>
                 <h1 id="titleText">[TitleText]</h1>
-                <h2>Current</h2>
-                <h3
+                <h2>Current:</h2>
+                <h3 id="UI_currentText" class="number">[Current]</h3>
+                <h2>Goal Amount:</h2>
+                <h3 id="UI_goalAmountText" class="number">[Goal Amount]</h3>
 
-                        id = "UI_currentText"
-                >[Current]</h3>
-                <h2>Goal Amount</h2>
-                <h3
-                        id = "UI_goalAmountText"
-                >[Goal Amount]</h3>
-                <h2>Edit</h2>
+
                 <div class="form-group">
                         <div>
                                 <label for="incrementAmount">
@@ -34,8 +30,9 @@
                                 <input class="form-control" id="incrementAmount" type="number" />
                         </div>
                         <div>
-                                <button type="button" class="btn btn-success" onclick="detailAdd()">Increment Amount</button>
-                            <button type="button" class="btn btn-failure" onclick="detailAdd()">Delete</button>
+                                <button type="button" class="btn btn-success" onclick="detailAdd()">Increment
+                                        Amount</button>
+                                <button type="button" class="btn btn-failure" onclick="detailAdd()">Delete</button>
                         </div>
                 </div>
         </form>
