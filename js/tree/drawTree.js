@@ -2,8 +2,6 @@ let canvas = document.getElementById("treeCanvas")
 let context = canvas.getContext("2d")
 canvas.width = 375;
 canvas.height = 500;
-let x = 200;
-let y = 400;
 let circles = [];
 
 class Circle {
@@ -85,11 +83,12 @@ function fuzz(x, diff) {
 
 function makeTree() {
     let colorFuzz = 15;
-    let baseLeafSize = 50;
     let offset = random(0, Math.PI);
-    let centerRadius = canvas.height / 5.0;
     let iter = random(6, 8);
-    let leafDistance = 90;
+    
+    let centerRadius = canvas.height / 5.0;
+    let baseLeafSize = centerRadius / 2.0;
+    let leafDistance = centerRadius * 0.9;
     
     circles.push(new Circle(canvas.width/2, canvas.height/2, centerRadius, rgba(fuzz(30, colorFuzz), fuzz(179, colorFuzz), fuzz(80, colorFuzz), 1), false));
     for (let i = 0; i < iter; i++) {

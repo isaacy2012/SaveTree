@@ -9,6 +9,17 @@ body>div {
     width: 375px;
 }
 
+#treeContainer {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#treeCanvas {
+    position: absolute;
+    bottom: 0;
+}
+
 #savings {
     margin: 48px;
     text-align: center;
