@@ -1,5 +1,6 @@
 let container = document.getElementById("treeContainer")
-let p = 1;
+let p = 0;
+let newP = 1;
 let tx = 0;
 let ty = 0;
 
@@ -7,15 +8,11 @@ let ty = 0;
  * Scales the tree to the size relative to the progress
  * @param {int} percentage
  */
-function sizeTree(current, total) {
+function sizeTree() {
     resetTree();
-    if (total == 0) {
-        return;
+    if(p < newP){
+        p+= 0.0025;
     }
-
-    p = current/total;
-    p = Math.min(p, 1);
-    p = Math.max(p, 0.1);
 
     let contextWidth = canvas.width * p;
     let contextHeight = canvas.height * p;
@@ -27,6 +24,16 @@ function sizeTree(current, total) {
     context.scale(p, p);
 }
 
+function setP(current, total) {
+    if (total == 0) {
+        return;
+    }
+
+    newP = current/total;
+    newP = Math.min(newP, 1);
+    newP = Math.max(newP, 0.1);
+}
+
 function resetTree(){
     context.scale(1/p, 1/p);
     context.translate(-tx, -ty);
@@ -35,6 +42,7 @@ function resetTree(){
 function main() {
     makeTree();
     setInterval(() => {
+        sizeTree();
         draw();
     }, 4);
 }
