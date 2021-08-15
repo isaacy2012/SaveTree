@@ -1,12 +1,17 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
 body {
     text-align: center;
     background-color: #ffffff;
     color: #4C9430;
     margin: 1em;
 }
-h1,h2,h3,h4,h5,h6 {
-    font-weight: medium;
+.detail-content {
+    padding:1em;
 }
+
 form {
     width: 100%;
     padding: 0.5em;
@@ -14,12 +19,27 @@ form {
     text-align: center;
 
 }
+.detail-item{
+    padding: 0.2em 0em;
+}
 .goals{
     width: 100%;
 }
-label{
+.goal-title{
+    text-align: center;
+    font-weight: 300;
+    font-size:4em;
+    padding:0.2em;
+}
+.label,h1{
     color: #4C9430;
-
+    weight: 700;
+}
+.detail-text{
+    text-align: left;
+}
+h3,h4,h5,h6{
+    weight: 400;
 }
 .form-control{
     background-color:#E9FFE0;
@@ -29,6 +49,10 @@ label{
     width: 100%;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
+}
+
+btn-sm{
+    margin:0;
 }
 
 .btn-circle-div {
@@ -62,6 +86,13 @@ label{
     margin-left: -4px;
     margin-right: -4px;
     border-radius: 8px;
+    background: #E9FFE0;
+
+
+}
+card:hover {
+    border-color: #85AA34
+
 }
 .modal-content{
     border-radius: 8px;
@@ -107,8 +138,9 @@ label{
 
 .number {
     color: 	#696969;
-    background-color: #e1ec93;
-    padding: .2em;
+    background-color: #E9FFE0;
+    padding: .5em;
+    border-radius: 20px;
 }
 
 /*&*/
