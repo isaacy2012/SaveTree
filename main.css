@@ -4,8 +4,11 @@ body {
     color: #4C9430;
     margin: 1em;
 }
+a:hover {
+    color: green;
+}
 h1,h2,h3,h4,h5,h6 {
-    font-weight: medium;
+    font-weight: 600;
 }
 form {
     width: 100%;
