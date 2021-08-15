@@ -1,5 +1,21 @@
-let money = 0;
+let money = 50;
 let goals = {};
+
+function decrementMoney() {
+    if (money <= 0) {
+        return false;
+    }
+    money--;
+    return true;
+}
+
+function decrementMoneyByAmount(amount) {
+    if (money < amount) {
+        return false;
+    }
+    money -= amount;
+    return true;
+}
 
 class Goal {
     name
@@ -13,11 +29,19 @@ class Goal {
     }
 
     increment() {
-        this.current++;
+        if (decrementMoney()) {
+            this.current++;
+            return true;
+        }
+        return false;
     }
 
     incrementByAmount(incrementAmount) {
-        this.current = this.current + incrementAmount;
+        if (decrementMoneyByAmount(incrementAmount)) {
+            this.current = this.current + incrementAmount;
+            return true;
+        }
+        return false;
     }
 
     static ofObject(goalObj) {
@@ -33,8 +57,18 @@ class Goal {
 
 function mutateData(update, refresh) {
     update();
-    saveGoals();
+    saveData();
     refresh();
+}
+
+function saveData() {
+    saveGoals();
+    saveMoney();
+}
+
+function loadData() {
+    loadGoals();
+    loadMoney();
 }
 
 function saveGoals() {
@@ -52,4 +86,16 @@ function loadGoals() {
         let goal = Goal.ofObject(goalObj);
         goals[goalObj.name] = goal;
     }
+}
+
+function loadMoney() {
+    let ls = localStorage["money"];
+    if (!ls) {
+        return;
+    }
+    money = ls;
+}
+
+function saveMoney() {
+    localStorage["money"] = money;
 }

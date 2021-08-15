@@ -1,7 +1,9 @@
-loadGoals();
+loadData();
 refresh();
 
 function refresh() {
+    let UI_moneyText = document.getElementById("UI_moneyText");
+    UI_moneyText.innerText = "You have $" + money;
     let UI_goalsList = document.getElementById("UI_goalsList");
     UI_goalsList.innerHTML = "";
     let textArea = document.getElementById("textArea");
@@ -68,6 +70,11 @@ function incrementFromName(name) {
         return;
     }
 
-    mutateData(() => goals[name].increment(), refresh);
+    mutateData(() => {
+            if (!goals[name].increment()) {
+                window.alert("Sorry, you don't have enough money for that");
+            }
+        }
+        , refresh);
 }
 

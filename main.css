@@ -8,8 +8,14 @@ body {
     color: #4C9430;
     margin: 1em;
 }
-.detail-content {
-    padding:1em;
+
+
+a:hover {
+    color: green;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
 }
 
 form {
@@ -43,6 +49,18 @@ h3,h4,h5,h6{
 }
 .form-control{
     background-color:#E9FFE0;
+}
+
+#treeContainer {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#treeCanvas {
+    position: relative;
+    align-items: center;
 }
 
 .btn {
