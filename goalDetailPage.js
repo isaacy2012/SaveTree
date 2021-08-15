@@ -6,6 +6,7 @@ const goal = goals[name];
 refresh();
 
 function refresh() {
+    sizeTree(goal.current, goal.total);
     document.getElementById("pageTitle").innerText = goal.name;
     document.getElementById("titleText").innerText = goal.name;
     let UI_currentText = document.getElementById("UI_currentText");
