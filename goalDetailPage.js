@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const name = urlParams.get("name");
 
-loadGoals();
+loadData();
 const goal = goals[name];
 refresh();
 
@@ -27,7 +27,11 @@ function detailAdd() {
         return;
     }
 
-    mutateData(() => goal.incrementByAmount(amountToAdd), refresh);
+    mutateData(() => {
+        if (!goal.incrementByAmount(amountToAdd)) {
+            window.alert("Sorry, you don't have enough money for that");
+        }
+    }, refresh);
 
     // clear the text inputs
     // editNameInput.value = "";
