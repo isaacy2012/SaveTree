@@ -1,4 +1,4 @@
-
+/*General styling*/
 *{
     font-family: 'Roboto', sans-serif;
 }
@@ -6,26 +6,60 @@ body {
     text-align: center;
     background-color: #ffffff;
     color: #4C9430;
-    margin: 1em;
+    margin: 16px;
 }
 
 a:hover {
     color: green;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2 {
     font-weight: 600;
 }
+h3,h4,h5,h6{
+    font-weight: 400;
+}
+
+.number {
+    color: 	#696969;
+    background-color: #E9FFE0;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.btn-form{
+    margin-bottom: 0px;
+}
+.btn {
+    border-radius: 8px;
+}
+/*Form + input styling*/
 
 form {
     width: 100%;
-    padding: 0.5em;
+    padding: 8px;
     display: grid;
     text-align: center;
 
 }
+.form-group {
+    padding: 0.25em;
+}
+.form-control{
+    background-color:#E9FFE0;
+    border-radius: 8px;
+}
+
+/*Specific styling for the goal modal popup*/
+
+.modal-content{
+    border-radius: 8px;
+}
+
+/*Specific styling for the goal detail page*/
+
 .detail-item{
-    padding: 0.2em 0em;
+    padding: 3px 0px;
     text-align:center;
 
 }
@@ -38,11 +72,9 @@ form {
     font-size:4em;
     padding:0.2em;
 }
-.label,h1{
-    color: #4C9430;
-}
+
 #titleText{
-    padding:0.5em;
+    padding:8px;
     font-size: 2.5em;
     font-weight: 300;
 }
@@ -50,12 +82,9 @@ form {
 .detail-text{
     text-align: left;
 }
-h3,h4,h5,h6{
-    font-weight: 400;
-}
-.form-control{
-    background-color:#E9FFE0;
-}
+
+
+/*Styling for the tree*/
 
 #treeContainer {
     width: 100%;
@@ -71,10 +100,12 @@ h3,h4,h5,h6{
     margin:auto;
 }
 
+/*Styling for the button*/
+
 .btn {
     width: 100%;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 btn-sm{
@@ -96,9 +127,6 @@ btn-sm{
     border-radius: 50%;
 }
 
-.form-group {
-    padding: 0.25em;
-}
 
 .goalLink {
     text-decoration: none;
@@ -120,17 +148,7 @@ card:hover {
     border-color: #85AA34
 
 }
-.modal-content{
-    border-radius: 8px;
-}
 
-
-.btn-form{
-    margin-bottom: 0px;
-}
-.btn {
-    border-radius: 8px;
-}
 
 .fab-container {
     display: flex;
@@ -143,9 +161,7 @@ card:hover {
     right: 30px;
 }
 
-.form-control{
-    border-radius: 8px;
-}
+
 
 .fab {
     position: fixed;
@@ -162,33 +178,5 @@ card:hover {
     background-color: #85AA34;
 }
 
-.number {
-    color: 	#696969;
-    background-color: #E9FFE0;
-    padding: .5em;
-    border-radius: 20px;
-}
-
-/*&*/
-/*::before {*/
-/*    content: " ";*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    right: 0;*/
-/*    height: 35px;*/
-/*    width: 35px;*/
-/*    background-color: inherit;*/
-/*    border-radius: 0 0 10px 0;*/
-/*    z-index: -1;*/
-/*}*/
-
-/*.fab-content {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    border-radius: 50%;*/
-/*}*/
 
 
