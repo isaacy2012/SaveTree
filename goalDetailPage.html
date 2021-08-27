@@ -23,7 +23,7 @@
                 <div id="treeContainer">
                         <canvas id="treeCanvas"></canvas>
                 </div>
-
+                <!--Each detail-item class is an item for the goal detail page-->
                 <div class="detail-item">
                         <h2>Current:</h2>
                         <h3 id="UI_currentText" class="number">[Current]</h3>
@@ -35,20 +35,22 @@
                 <div class="detail-item">
                         <h2>Edit</h2>
                         <div class="form-group">
-                                <div class="detail-item">
+                                <div>
                                         <label class="detail-text" for="incrementAmount">
-                                                Amount to add
+                                                Amount
                                         </label>
                                         <input class="form-control" id="incrementAmount" type="number" />
                                 </div>
-                                <div class="detail-item">
-                                        <button type="button" class="btn btn-success" onclick="detailAdd()">Increment
+                                <div>
+                                        <button type="button" class="btn btn-success" onclick="detailAdd()">Add
                                                 Amount</button>
-                                        <button type="button" class="btn btn-failure"
-                                                onclick="detailAdd()">Delete</button>
+                                        <button type="button" class="btn btn-danger" onclick="detailAdd()">Delete
+                                                Amount</button>
                                 </div>
                         </div>
+                        <!--form-group closing tag-->
                 </div>
+                <!--detail-item closing tag-->
 
         </form>
 
