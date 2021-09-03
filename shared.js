@@ -1,6 +1,10 @@
-let money = 50;
+let money = 100;
 let goals = {};
 
+/**
+ * Decrement the money in the wallet, returning whether this is possible given the amount of money in the wallet
+ * @returns {boolean}
+ */
 function decrementMoney() {
     if (money <= 0) {
         return false;
@@ -9,6 +13,11 @@ function decrementMoney() {
     return true;
 }
 
+/**
+ * Decrement the money in the wallet by a particular amount, returning whether this is possible given the amount of money in the wallet
+ * @param amount
+ * @returns {boolean}
+ */
 function decrementMoneyByAmount(amount) {
     if (money < amount) {
         return false;
@@ -17,6 +26,9 @@ function decrementMoneyByAmount(amount) {
     return true;
 }
 
+/**
+ * Goal class
+ */
 class Goal {
     name
     current
@@ -44,6 +56,11 @@ class Goal {
         return false;
     }
 
+    /**
+     * Convert a POJO to a Goal
+     * @param goalObj
+     * @returns {Goal}
+     */
     static ofObject(goalObj) {
         let goal = new Goal(goalObj.name, goalObj.total);
         goal.current = goalObj.current;
@@ -55,26 +72,43 @@ class Goal {
     }
 }
 
+/**
+ * Mutates the data, saving it
+ * @param update the model updating function to call before saving
+ * @param refresh the UI refresh function to call after saving
+ */
 function mutateData(update, refresh) {
     update();
     saveData();
     refresh();
 }
 
+/**
+ * Saving the data
+ */
 function saveData() {
     saveGoals();
     saveMoney();
 }
 
+/**
+ * Loading the data
+ */
 function loadData() {
     loadGoals();
     loadMoney();
 }
 
+/**
+ * Saving the goals to localStorage
+ */
 function saveGoals() {
     localStorage["goals"] = JSON.stringify(goals);
 }
 
+/**
+ * Loading the goals from local storage
+ */
 function loadGoals() {
     let ls = localStorage["goals"];
     if (!ls) {
@@ -88,6 +122,9 @@ function loadGoals() {
     }
 }
 
+/**
+ * Loading the money from local storage
+ */
 function loadMoney() {
     let ls = localStorage["money"];
     if (!ls) {
@@ -96,6 +133,9 @@ function loadMoney() {
     money = ls;
 }
 
+/**
+ * Saving the money to local storage
+ */
 function saveMoney() {
     localStorage["money"] = money;
 }

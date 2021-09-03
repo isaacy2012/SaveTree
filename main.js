@@ -1,17 +1,27 @@
 loadData();
 refresh();
 
+/**
+ * Refresh the UI:
+ * - Money
+ * - Goals
+ */
 function refresh() {
     let UI_moneyText = document.getElementById("UI_moneyText");
     UI_moneyText.innerText = "You have $" + money;
     let UI_goalsList = document.getElementById("UI_goalsList");
     UI_goalsList.innerHTML = "";
-    let textArea = document.getElementById("textArea");
+    document.getElementById("textArea");
     for (name in goals) {
         UI_goalsList.appendChild(makeGoalElement(name));
     }
 }
 
+/**
+ * Make a goal element
+ * @param name the name of the goal
+ * @returns {HTMLDivElement}
+ */
 function makeGoalElement(name) {
     let superElement = document.createElement("div");
     superElement.className = "col";
@@ -39,6 +49,9 @@ function makeGoalElement(name) {
     return superElement;
 }
 
+/**
+ * Add a goal, getting the data from the modal
+ */
 function addGoal() {
     let nameInput = document.getElementById("nameInput");
     let totalInput = document.getElementById("totalInput");
@@ -65,6 +78,10 @@ function addGoal() {
 
 }
 
+/**
+ * Increment the goal with this name
+ * @param name the name
+ */
 function incrementFromName(name) {
     if (!goals[name]) {
         return;

@@ -5,10 +5,16 @@ loadData();
 const goal = goals[name];
 refresh();
 
+/**
+ * Delete this goal
+ */
 function deleteGoal() {
     mutateData(() => {delete goals[name]}, () => {window.history.back()});
 }
 
+/**
+ * Refresh the detail page UI
+ */
 function refresh() {
     setP(goal.current, goal.total);
     document.getElementById("pageTitle").innerText = goal.name;
@@ -20,6 +26,9 @@ function refresh() {
 }
 
 
+/**
+ * Increment to this goal, taking money from the wallet.
+ */
 function detailAdd() {
     let incrementAmountInput = document.getElementById("incrementAmount");
 
