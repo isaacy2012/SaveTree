@@ -5,6 +5,10 @@ loadData();
 const goal = goals[name];
 refresh();
 
+function deleteGoal() {
+    mutateData(() => {delete goals[name]}, () => {window.history.back()});
+}
+
 function refresh() {
     setP(goal.current, goal.total);
     document.getElementById("pageTitle").innerText = goal.name;
